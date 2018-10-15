@@ -3,26 +3,30 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "progresive-drive-explorer": {
+    "progresive-file-manager": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "pde",
+      "prefix": "pfm",
       "schematics": {},
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/progresive-drive-explorer",
+            "outputPath": "dist/progresive-file-manager",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ],
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "src/styles.css"
             ],
             "scripts": []
@@ -43,25 +47,26 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "serviceWorker": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "progresive-drive-explorer:build"
+            "browserTarget": "progresive-file-manager:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "progresive-drive-explorer:build:production"
+              "browserTarget": "progresive-file-manager:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "progresive-drive-explorer:build"
+            "browserTarget": "progresive-file-manager:build"
           }
         },
         "test": {
@@ -72,12 +77,16 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
+              {
+                "input": "node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+              },
               "src/styles.css"
             ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.json"
             ]
           }
         },
@@ -95,7 +104,7 @@
         }
       }
     },
-    "progresive-drive-explorer-e2e": {
+    "progresive-file-manager-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "progresive-drive-explorer:serve"
+            "devServerTarget": "progresive-file-manager:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "progresive-drive-explorer:serve:production"
+              "devServerTarget": "progresive-file-manager:serve:production"
             }
           }
         },
@@ -123,5 +132,5 @@
       }
     }
   },
-  "defaultProject": "progresive-drive-explorer"
+  "defaultProject": "progresive-file-manager"
 }

@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+}
+
+.file-name-cell {
+    cursor: pointer;
+}
+
+.file-name-cell span {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.file-name-cell span span {
+    padding-left: 4px;
+}
