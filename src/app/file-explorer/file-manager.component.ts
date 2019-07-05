@@ -44,7 +44,7 @@ export class FileManagerComponent implements OnInit {
   private $currentDirectory = new BehaviorSubject<number>(0);
   displayedColumns = ['name', 'size', 'type'];
 
-  @ViewChild('pathTabs')
+  @ViewChild('pathTabs', { static: true })
   pathTabs: MatTabGroup;
 
   constructor() { }
