@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
-import {MatTabGroup} from '@angular/material';
+import { MatTabGroup } from '@angular/material/tabs';
 
 interface File {
   id: number;
